@@ -1,0 +1,122 @@
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d14;
+      --card: #161622;
+      --border: #252538;
+      --accent: #7c5cfc;
+      --accent2: #c084fc;
+      --danger: #f56565;
+      --success: #68d391;
+      --text: #e8e6f0;
+      --muted: #7a7899;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 2rem;
+      color: var(--text);
+    }
+
+    h1 {
+      font-size: 1rem; text-transform: uppercase; letter-spacing: 3px;
+      color: var(--muted); margin-bottom: 2rem; font-weight: 500;
+    }
+
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 24px; padding: 3rem 2.5rem;
+      text-align: center; width: 100%; max-width: 360px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.4);
+    }
+
+    /* ── Display ── */
+    .display {
+      position: relative; margin-bottom: 2.5rem;
+    }
+    .count-label { font-size: .75rem; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; margin-bottom: .5rem; }
+
+    .count {
+      font-size: 6rem; font-weight: 900; line-height: 1;
+      letter-spacing: -4px;
+      transition: transform .15s cubic-bezier(.34,1.56,.64,1), color .3s;
+      display: inline-block;
+    }
+    .count.bump { transform: scale(1.15); }
+    .count.positive { color: var(--success); }
+    .count.zero { color: var(--text); }
+
+    .track {
+      display: flex; justify-content: center; gap: 2rem; margin-top: 1.2rem;
+    }
+    .track-item { text-align: center; }
+    .track-num { font-size: 1.2rem; font-weight: 700; }
+    .track-num.inc { color: var(--success); }
+    .track-num.dec { color: var(--danger); }
+    .track-lbl { font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ── Buttons ── */
+    .btn-row { display: flex; gap: .75rem; justify-content: center; margin-bottom: 1rem; }
+    .btn-row-2 { display: flex; justify-content: center; }
+
+    button {
+      border: none; border-radius: 14px; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: transform .1s, box-shadow .2s, opacity .2s;
+    }
+    button:active { transform: scale(.93); }
+
+    .btn-dec {
+      width: 72px; height: 72px; font-size: 2rem;
+      background: rgba(245,101,101,.12); color: var(--danger);
+      border: 1.5px solid rgba(245,101,101,.25);
+    }
+    .btn-dec:hover { background: rgba(245,101,101,.2); }
+    .btn-dec:disabled { opacity: .3; cursor: not-allowed; }
+
+    .btn-inc {
+      width: 72px; height: 72px; font-size: 2rem;
+      background: rgba(104,211,145,.12); color: var(--success);
+      border: 1.5px solid rgba(104,211,145,.25);
+    }
+    .btn-inc:hover { background: rgba(104,211,145,.2); }
+
+    .btn-reset {
+      padding: .6rem 2rem; font-size: .85rem;
+      background: rgba(124,92,252,.12); color: var(--accent2);
+      border: 1.5px solid rgba(124,92,252,.25); letter-spacing: .5px;
+    }
+    .btn-reset:hover { background: rgba(124,92,252,.22); }
+
+    /* ── Step selector ── */
+    .step-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: .75rem; margin-bottom: 1.75rem; font-size: .85rem; color: var(--muted);
+    }
+    .step-btns { display: flex; gap: .3rem; }
+    .step-btn {
+      padding: .3rem .7rem; border-radius: 8px; font-size: .8rem; font-weight: 600;
+      background: var(--border); color: var(--muted); border: 1.5px solid transparent;
+    }
+    .step-btn.active { background: rgba(124,92,252,.15); color: var(--accent2); border-color: var(--accent); }
+
+    /* ── History ── */
+    .history {
+      margin-top: 1.75rem; text-align: left;
+      border-top: 1px solid var(--border); padding-top: 1.2rem;
+    }
+    .history h3 { font-size: .75rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: .6rem; }
+    .history-list { display: flex; flex-direction: column; gap: .25rem; max-height: 100px; overflow-y: auto; }
+    .history-item {
+      font-size: .8rem; padding: .25rem .5rem; border-radius: 6px;
+      display: flex; justify-content: space-between;
+    }
+    .history-item.inc { background: rgba(104,211,145,.06); color: var(--success); }
+    .history-item.dec { background: rgba(245,101,101,.06); color: var(--danger); }
+    .history-item.rst { background: rgba(124,92,252,.06); color: var(--accent2); }
+
+    @media (max-width: 400px) { .card { padding: 2rem 1.5rem; } .count { font-size: 4.5rem; } }
+  

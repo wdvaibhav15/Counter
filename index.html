@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Counter App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<h1>Counter</h1>
+
+<div class="card">
+  <!-- Step size -->
+  <div class="step-row">
+    <span>Step:</span>
+    <div class="step-btns" id="stepBtns">
+      <button class="step-btn active" data-step="1">1</button>
+      <button class="step-btn" data-step="5">5</button>
+      <button class="step-btn" data-step="10">10</button>
+      <button class="step-btn" data-step="100">100</button>
+    </div>
+  </div>
+
+  <!-- Display -->
+  <div class="display">
+    <p class="count-label">Current count</p>
+    <div class="count zero" id="count">0</div>
+    <div class="track">
+      <div class="track-item"><div class="track-num inc" id="totalInc">0</div><div class="track-lbl">Added</div></div>
+      <div class="track-item"><div class="track-num dec" id="totalDec">0</div><div class="track-lbl">Removed</div></div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="btn-row">
+    <button class="btn-dec" id="btnDec" aria-label="Decrement" disabled>−</button>
+    <button class="btn-inc" id="btnInc" aria-label="Increment">+</button>
+  </div>
+  <div class="btn-row-2">
+    <button class="btn-reset" id="btnReset">↺ Reset</button>
+  </div>
+
+  <!-- History -->
+  <div class="history">
+    <h3>History</h3>
+    <div class="history-list" id="historyList">
+      <div class="history-item rst"><span>Session started</span><span>0</span></div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
